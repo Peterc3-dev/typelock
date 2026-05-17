@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --color-phosphor: #33ff33;
+  --color-phosphor-dim: #1a8c1a;
+  --color-bg: #0a0a0a;
+  --color-bg-subtle: #111111;
+  --color-bg-hover: #1a1a1a;
+  --color-err: #ff3333;
+  --color-text-muted: #444444;
+  --color-text-dim: #666666;
+  --color-review: #ffaa33;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-phosphor);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.progress-bar-fill {
+  transition: width 0.3s ease-out;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-phosphor-dim);
+  border-radius: 2px;
+}
+
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+textarea:focus {
+  outline: none;
+}
